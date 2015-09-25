@@ -15,3 +15,10 @@ for i=1:size(XTrain, 1)
     [h p ci stats] = ttest2( X0(i,:), X1(i,:), 'VarType', 'unequal');
     T(i) = abs( stats.tstat );
 end
+
+%get top 25 features
+[~, inds] = sort(T,1,'descend');
+
+T25 = inds(1:25);
+
+svmstruct = svmtrain( XTrain', YTrain );
