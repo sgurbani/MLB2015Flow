@@ -4,10 +4,10 @@ clear; clc;
 minLeaf = 1;
 
 %number of features to sample (w/o replacement) at each node
-M = 100;
+M = 50;
 
 %number of trees
-N = 1000;
+N = 500;
 
 %start parallel pool
 if isempty(gcp('nocreate'))
